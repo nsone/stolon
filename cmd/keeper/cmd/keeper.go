@@ -116,6 +116,7 @@ type config struct {
 	canBeMaster             bool
 	canBeSynchronousReplica bool
 	disableDataDirLocking   bool
+	skipHBARender           bool
 }
 
 var cfg config
@@ -143,6 +144,7 @@ func init() {
 
 	CmdKeeper.PersistentFlags().BoolVar(&cfg.canBeMaster, "can-be-master", true, "prevent keeper from being elected as master")
 	CmdKeeper.PersistentFlags().BoolVar(&cfg.canBeSynchronousReplica, "can-be-synchronous-replica", true, "prevent keeper from being chosen as synchronous replica")
+	CmdKeeper.PersistentFlags().BoolVar(&cfg.skipHBARender, "skip-hba-render", true, "boolean to render the hba configuration file even on restarts")
 	CmdKeeper.PersistentFlags().BoolVar(&cfg.disableDataDirLocking, "disable-data-dir-locking", false, "disable locking on data dir. Warning! It'll cause data corruptions if two keepers are concurrently running with the same data dir.")
 
 	if err := CmdKeeper.PersistentFlags().MarkDeprecated("id", "please use --uid"); err != nil {
