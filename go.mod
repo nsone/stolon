@@ -7,6 +7,7 @@ require (
 	github.com/docker/leadership v0.1.0
 	github.com/docker/libkv v0.2.1
 	github.com/evanphx/json-patch v4.5.0+incompatible
+	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang/mock v1.4.0
 	github.com/google/go-cmp v0.4.0
 	github.com/hashicorp/consul/api v1.4.0
